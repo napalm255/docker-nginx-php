@@ -1,8 +1,7 @@
 FROM nginx
 
-RUN apt-get update
-RUN apt-get upgrade
-RUN apt-get install \
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt-get -y install \
   git \
-  php5-fpm \
-  puppet
+  php5-fpm
