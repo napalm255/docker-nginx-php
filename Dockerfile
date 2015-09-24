@@ -1,5 +1,5 @@
 # Pull from the ubuntu:14.04 image
-FROM ubuntu:14.04
+FROM ubuntu:14.04.3
 
 # Update cache and install base packages
 RUN apt-get update && apt-get -y install \
@@ -61,4 +61,3 @@ WORKDIR /var/www/html
 
 # Expose port 80
 EXPOSE 80
-EXPOSE 443
