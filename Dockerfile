@@ -1,4 +1,4 @@
-# Pull from the ubuntu:14.04 image
+# Pull from the ubuntu:14.04.3 image
 FROM ubuntu:14.04.3
 
 # Update cache and install base packages
