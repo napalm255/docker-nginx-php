@@ -14,7 +14,6 @@ RUN apt-get update && apt-get -y install \
     net-tools \
     mcrypt \
     build-essential \
-    tcl8.5 \
     git
 
 # Download Nginx signing key
