@@ -11,6 +11,8 @@ RUN sed -i "s/;date.timezone =.*/date.timezone = UTC/" /etc/php5/cli/php.ini
 RUN sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php5/fpm/php.ini
 RUN sed -i "s/user = www-data/user = nginx/" /etc/php5/fpm/pool.d/www.conf
 RUN sed -i "s/group = www-data/group = nginx/" /etc/php5/fpm/pool.d/www.conf
+RUN sed -i "s/listen.owner = www-data/listen.owner = nginx/" /etc/php5/fpm/pool.d/www.conf
+RUN sed -i "s/listen.group = www-data/listen.group = nginx/" /etc/php5/fpm/pool.d/www.conf
 
 #RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 #RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.conf
