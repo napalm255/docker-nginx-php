@@ -1,13 +1,5 @@
 FROM nginx
 
-# Ensure UTF-8
-RUN locale-gen en_US.UTF-8
-ENV LANG       en_US.UTF-8
-ENV LC_ALL     en_US.UTF-8
-
-ENV HOME /root
-
-# Nginx-PHP Installation
 RUN apt-get -y update
 RUN apt-get install -y vim curl wget build-essential
 RUN apt-get install -y nginx
@@ -31,6 +23,5 @@ ADD build/phpfpm.sh /etc/service/phpfpm/run
 RUN chmod +x        /etc/service/phpfpm/run
 
 EXPOSE 80
-# End Nginx-PHP
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
