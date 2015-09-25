@@ -49,8 +49,10 @@ RUN perl -pi -e 's/expose_php = On/expose_php = Off/g' /etc/php5/fpm/php.ini
 # Copy default site conf
 COPY default.conf /etc/nginx/sites-available/default
 
-# Copy the index.php file
-COPY index.php /var/www/html/index.php
+# Copy the init.sh
+COPY init.sh /var/www/init.sh
+RUN  chmod +x /var/www/init.sh
+RUN  /var/www/init.sh
 
 # Boot up Nginx, and PHP5-FPM when container is started
 CMD service php5-fpm start && nginx
